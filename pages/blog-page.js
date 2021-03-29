@@ -1,16 +1,14 @@
-import Layout from "./components/Layout"
+import Layout from "../components/Layout"
 import { getAllPostsData } from "../lib/posts";
-import Post from "./components/posts";
+import Post from "../components/Posts";
 
 const Blog = ( { posts } ) => {
+  console.log(posts)
   return (
-    <Layout title='blog'>
-      <ui className="m-10">
-        {posts && posts.map((post) => {
-          // <Post key={post.id} post={post} />
-          <p>post</p>
-        })}
-      </ui>
+    <Layout title="Blog">
+      <ul className="m-10">
+        {posts && posts.map((post) => <Post key={post.id} post={post} />)}
+      </ul>
     </Layout>
   )
 }
